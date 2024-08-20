@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-xl-12">
+        <app-card cardTitle="Rapport list" [options]="false" blockClass="table-border-style">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>Time </th>
+                            <th>Application Name </th>
+                            <th>Msisdn</th>
+                            <th>Imsi</th>
+                            <th>Cell</th>
+                            <th>Radio_acess</th>
+                            <th>Data_vol_total</th>
+                            <th>TCP_conn_establ_UL_SR</th>
+                            <th>TCP_initial_radio_RTT_avg</th>
+                            <th>Data_throughput</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let entity of myOoredooList">
+
+
+                            <td>{{entity.time}}</td>
+                            <td>{{entity.application_name}}</td>
+                            <td>{{entity.msisdn}}</td>
+                            <td>{{entity.imsi}}</td>
+                            <td>{{entity.cell}}</td>
+                            <td>{{entity.radio_acess}}</td>
+                            <td>{{entity.data_vol_total }}</td>
+                            <td>{{entity.tcp_conn_establ_ul_sr}}</td>
+                            <td>{{entity.tcp_initial_radio_rtt_avg }}</td>
+                            <td>{{entity.data_throughput}}</td>
+
+
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+                <button (click)="previousPage()" [disabled]="page === 0">Previous</button>
+                <button (click)="nextPage()" [disabled]="page === totalPages - 1">Next</button>
+            </div>
+        </app-card>
+    </div>
+</div>

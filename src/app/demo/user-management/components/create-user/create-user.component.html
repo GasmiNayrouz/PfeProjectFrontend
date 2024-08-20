@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card cardTitle="Add a new User" [options]="false">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="username">username</label>
+                            <input type="text" class="form-control" id="username" placeholder="username" name="username" formControlName="username" [ngClass]="{'is-invalid': form.get('username')?.invalid &&form.get('username')?.touched,'is-valid':form.get('username')?.valid && form.get('username')?.touched}"
+                            />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="matricule">Matricule</label>
+                            <input type="text" class="form-control" id="matricule" placeholder="matricule" name="matricule" formControlName="matricule" [ngClass]="{'is-invalid': form.get('matricule')?.invalid &&form.get('matricule')?.touched,'is-valid':form.get('matricule')?.valid && form.get('matricule')?.touched}"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">phoneNumber</label>
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="phoneNumber" name="phoneNumber" formControlName="phoneNumber" [ngClass]="{'is-invalid': form.get('phoneNumber')?.invalid &&form.get('phoneNumber')?.touched,'is-valid':form.get('phoneNumber')?.valid && form.get('phoneNumber')?.touched}"
+                            />
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" formControlName="email" [ngClass]="{'is-invalid': form.get('email')?.invalid &&form.get('email')?.touched,'is-valid':form.get('email')?.valid && form.get('email')?.touched}"
+                            />
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <!-- Affichage du mot de passe généré automatiquement -->
+
+                        <div class="form-group">
+                            <label for="password">Password </label>
+                            <input type="password" class="form-control" id="password" name="password" formControlName="password" [ngClass]="{'is-invalid': form.get('password')?.invalid &&form.get('password')?.touched,'is-valid':form.get('password')?.valid && form.get('password')?.touched
+      }" />
+                        </div>
+                        <!-- <div class="form-group">
+            <label for="lastName">Location</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Location"  name="location" formControlName="location"  [ngClass]="{'is-invalid': form.get('location')?.invalid &&form.get('location')?.touched,'is-valid':form.get('location')?.valid && form.get('location')?.touched}" />
+          </div> -->
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="form-control" id="role" name="role" formControlName="role" [ngClass]="{'is-invalid': form.get('role')?.invalid && form.get('role')?.touched,
+                            'is-valid': form.get('role')?.valid && form.get('role')?.touched}" required>
+                <option value="" disabled selected>Select Role</option>
+                <option [ngValue]="r" *ngFor="let r of listRole"> {{r.name}} </option>
+                
+            </select>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="align-right">
+                    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+          ADD
+        </button>
+                </div>
+
+            </form>
+        </app-card>
+    </div>
+</div>

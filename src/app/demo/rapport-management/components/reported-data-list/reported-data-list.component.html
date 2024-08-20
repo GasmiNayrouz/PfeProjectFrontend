@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xl-12">
+        <app-card cardTitle="Reported  list" [options]="false" blockClass="table-border-style">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>MSISDN</th>
+                            <th>IMSI</th>
+                            <th>Reported_data_vol_DL</th>
+                            <th>Reported_data_vol_UL</th>
+                            <th>Granted_data_vol_Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let rapport of reportedList">
+
+                            <td>{{rapport.time}}</td>
+                            <td>{{rapport.msisdn}}</td>
+                            <td>{{rapport.imsi}}</td>
+                            <td>{{rapport.reported_data_vol_dl}}</td>
+                            <td>{{rapport.reported_data_vol_ul}}</td>
+                            <td>{{rapport.granted_data_vol_total}}</td>
+                            <td>
+
+
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <button (click)="previousPage()" [disabled]="page === 0">Previous</button>
+                <button (click)="nextPage()" [disabled]="page === totalPages - 1">Next</button>
+            </div>
+        </app-card>
+    </div>
+</div>

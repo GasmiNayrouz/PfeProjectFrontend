@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card cardTitle="Add a new Role" [options]="false">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Role name</label>
+                            <input type="text" class="form-control" id="name" placeholder="role name" name="name" formControlName="name" [ngClass]="{'is-invalid': form.get('name')?.invalid &&form.get('username')?.touched,'is-valid':form.get('name')?.valid && form.get('name')?.touched}"
+                            />
+                        </div>
+
+                        <br>
+
+
+
+
+                    </div>
+
+
+                    <!-- <div class="form-group">
+            <label for="lastName">Location</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Location"  name="location" formControlName="location"  [ngClass]="{'is-invalid': form.get('location')?.invalid &&form.get('location')?.touched,'is-valid':form.get('location')?.valid && form.get('location')?.touched}" />
+          </div> -->
+
+
+
+
+
+                </div>
+                <div class="align-right">
+                    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+          ADD Role
+        </button>
+                </div>
+
+            </form>
+        </app-card>
+    </div>
+</div>
